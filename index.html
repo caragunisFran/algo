@@ -21,6 +21,13 @@ canvas{
 <canvas id=c></canvas>
 
 <script type="text/javascript">
+var background = new Image();
+background.src = "http://i.imgur.com/qlgoLVk.png";  
+background.onload = function(){
+    ctx.drawImage(background,0,0);   
+}
+  
+  
 function horribleGlobalClosure() {
   var debug = false;
   class Lupita {
