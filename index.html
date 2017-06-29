@@ -58,11 +58,6 @@ function horribleGlobalClosure() {
       ctx.font = '48px serif';
       ctx.fillText('🐯', 10, h);
       
-      base_image = new Image();
-      base_image.src = 'Captura.PNG';
-      base_image.onload = function(){
-        context.drawImage(base_image, 100, 100);
-      }
     }
     collide(obj) {
       let h = groundLevel + Math.pow(this.h - this.max, 2) - this.max * this.max;
@@ -110,13 +105,18 @@ function horribleGlobalClosure() {
   var i = 0;
   function draw(drawables) {
     ctx.clearRect(0, 0, c.width, c.height);
+    base_image = new Image();
+    base_image.src = 'Captura.PNG';
+    base_image.onload = function(){
+      ctx.drawImage(base_image, 100, 100);
+    }
     for (drawable of drawables) {
       drawable.draw(ctx);
     }
     lupita.draw(ctx);
     
     ctx.fillText('speed: ' + step, c.width - 200, 50);
-    ctx.fillText('ola hola hola', c.width - 200, 100);
+    ctx.fillText('hola hola hola', c.width - 200, 100);
   }
   function physics(objects) {
     lupita.next();
