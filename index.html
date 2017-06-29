@@ -108,7 +108,7 @@ function horribleGlobalClosure() {
     base_image = new Image();
     base_image.src = 'Captura.PNG';
     base_image.onload = function(){
-      ctx.drawImage(base_image, 100, 100);
+      ctx.drawImage(base_image, 200, 100);
     }
     for (drawable of drawables) {
       drawable.draw(ctx);
