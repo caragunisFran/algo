@@ -54,13 +54,10 @@ function horribleGlobalClosure() {
       if (debug) {
         ctx.fillRect(18, h + 10 - height, 50, height);
       }
-      var background = new Image();
-      background.src = "Captura.png";  
-      background.onload = function(){
-          ctx.drawImage(background,0,0);   
-      }
+
       ctx.font = '48px serif';
       ctx.fillText('🐯', 10, h);
+      ctx.fillText('🦁', 10, h);
     }
     collide(obj) {
       let h = groundLevel + Math.pow(this.h - this.max, 2) - this.max * this.max;
@@ -112,6 +109,12 @@ function horribleGlobalClosure() {
       drawable.draw(ctx);
     }
     lupita.draw(ctx);
+    
+    var background = new Image();
+    background.src = "Captura.png";  
+    background.onload = function(){
+        ctx.drawImage(background,0,0);   
+    }
     ctx.fillText('speed: ' + step, c.width - 200, 50);
     ctx.fillText('hola hola hola', c.width - 200, 100);
   }
