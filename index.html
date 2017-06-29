@@ -104,7 +104,7 @@ function horribleGlobalClosure() {
   var ctx=c.getContext('2d');
   var i = 0;
   function draw(drawables) {
-    ctx.clearRect(0, 0, c.width, c.height);
+    
     base_image = new Image();
     base_image.src = 'Captura.PNG';
     base_image.onload = function(){
@@ -116,7 +116,7 @@ function horribleGlobalClosure() {
     lupita.draw(ctx);
     
     ctx.fillText('speed: ' + step, c.width - 200, 50);
-    ctx.fillText('hola hola hola', c.width - 200, 100);
+    ctx.fillText('la hola hola', c.width - 200, 100);
   }
   function physics(objects) {
     lupita.next();
