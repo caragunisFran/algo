@@ -57,7 +57,12 @@ function horribleGlobalClosure() {
 
       ctx.font = '48px serif';
       ctx.fillText('🐯', 10, h);
-      ctx.fillText('🦁', 10, h);
+      
+      base_image = new Image();
+      base_image.src = 'Captura.PNG';
+      base_image.onload = function(){
+        context.drawImage(base_image, 100, 100);
+      }
     }
     collide(obj) {
       let h = groundLevel + Math.pow(this.h - this.max, 2) - this.max * this.max;
@@ -110,11 +115,6 @@ function horribleGlobalClosure() {
     }
     lupita.draw(ctx);
     
-    var background = new Image();
-    background.src = "Captura.png";  
-    background.onload = function(){
-        ctx.drawImage(background,0,0);   
-    }
     ctx.fillText('speed: ' + step, c.width - 200, 50);
     ctx.fillText('ola hola hola', c.width - 200, 100);
   }
